@@ -10,9 +10,9 @@ def recipe(ingredients):
 def read_file(file: str) -> dict:
     cook_book = {}
     with open(file, encoding='utf-8') as f:
-        for string in f:  # запустили цикл, который читает строки
-            dish_name = string.strip()  # первая строка, название блюда, получили, сохранили в переменную
-            quantity = int(f.readline().strip())  # вторая строка, получили число строк рецепта, сохранили
+        for string in f:
+            dish_name = string.strip()
+            quantity = int(f.readline().strip())
             cook_book[dish_name] = []
             for ingredients in range(quantity):
                 cook_book[dish_name].append(recipe(f.readline()))
